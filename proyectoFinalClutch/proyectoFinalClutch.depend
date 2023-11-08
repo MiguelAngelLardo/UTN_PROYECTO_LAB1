@@ -1,0 +1,158 @@
+# depslib dependency file v1.0
+1698443688 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\funcionesdado.cpp
+	<iostream>
+	"funciones.h"
+	"estructuras.h"
+
+1698443887 c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\funciones.h
+	<iostream>
+	"estructuras.h"
+
+1698443728 c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\estructuras.h
+
+1698443688 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\funcionespuntaje.cpp
+	<iostream>
+	<locale>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1698372237 c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1698443688 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\funcionesrandom.cpp
+	"funciones.h"
+	"estructuras.h"
+
+1698443688 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\funcionesunderthegun.cpp
+	<iostream>
+	"funciones.h"
+	"estructuras.h"
+
+1698445333 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\funcionesmenu.cpp
+	<iostream>
+	<locale>
+	<stdio.h>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1698445428 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\funcionesjugar.cpp
+	<iostream>
+	<iomanip>
+	<cstdio>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1698444000 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal2\proyectofinalclutch\main.cpp
+	<iostream>
+	<locale>
+	<cstdlib>
+	<ctime>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1699472459 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\funcionesmenu.cpp
+	<iostream>
+	<locale>
+	<stdio.h>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1698891691 c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1699131725 c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\funciones.h
+	<iostream>
+	"estructuras.h"
+
+1698973067 c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\estructuras.h
+
+1698982552 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\funcionesunderthegun.cpp
+	<iostream>
+	"funciones.h"
+	"estructuras.h"
+
+1699127844 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\main.cpp
+	<iostream>
+	<locale>
+	<cstdlib>
+	<ctime>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+	<iostream>
+	<fcntl.h>
+	<stdio.h>
+
+1699472153 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\funcionesdado.cpp
+	<iostream>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1699473167 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\funcionespuntaje.cpp
+	<iostream>
+	<locale>
+	<iomanip>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1698891691 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\funcionesrandom.cpp
+	"funciones.h"
+	"estructuras.h"
+
+1699472459 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\funcionesjugar.cpp
+	<iostream>
+	<iomanip>
+	<cstdio>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1699473107 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\funcionesestadistica.cpp
+	<iostream>
+	<iomanip>
+	<windows.h>
+	<mmsystem.h>
+	<thread>
+	"rlutil.h"
+	"funciones.h"
+	"estructuras.h"
+
+1699471270 source:c:\users\miguels\desktop\programacion\5-utn\proyectofinalcodeblocks\trabajolabofinal\proyectofinalclutch\funcionescreditos.cpp
+	<iostream>
+	<cstdlib>
+	<locale.h>
+	<windows.h>
+	<mmsystem.h>
+	<thread>
+	"funciones.h"
+	"rlutil.h"
+
