@@ -55,8 +55,46 @@ void nombresJugadores(Jugador &j1, Jugador &j2)
 void resetearMazo(Carta vMazo[]){
   for (int i = 0; i < MAZO; i++)
   {//Esta funcion arma el mazo con el palo, el valor, enMazo, bloqueada
-    vMazo[i] = {PALOS[i / MAZO_VALOR], VALORES[i % MAZO_VALOR], true, false};
+    vMazo[i] = {PALOS[i / MAZO_VALOR], VALORES[i % MAZO_VALOR], true, false};//enMazo = true, bloqueada = flase;
   }
+  //0/5 = 0 "diamante"
+  //0%5 = 0 "10"
+  //1/5 = 0 "diamante"
+  //1%5 = 1 "J"
+  //2/5 = 0 "diamante"
+  //2%5 = 2 "Q"
+  //4/5 = 0 "diamante"
+  //4%5 = 4 "A"
+  //5/5 = 1 "Pica"
+  //5%5 = 0 "10"
+}
+
+void mostrarMazoEnMesa(Carta vMazo[])
+{
+  cout << "+--------------------+" << endl;
+  cout << "|                    |" << endl;
+
+  for (int x = 0; x < MAZO; x++)
+  {
+    if (vMazo[x].enMazo == true)
+    {
+      cout << "|     ";
+      if(vMazo[x].palo == "Corazon" || vMazo[x].palo == "Diamante" )
+      {
+        rlutil::setColor(rlutil::RED);
+        cout<< vMazo[x].valor << " " << vMazo[x].palo;
+        rlutil::setColor(rlutil::BLACK);
+      }
+      else
+      {
+        cout<< vMazo[x].valor << " " << vMazo[x].palo;
+      }
+      cout << setw(15 - vMazo[x].valor.length() - vMazo[x].palo.length()) << "|" << endl;
+    } ///15 es el ancho total deseado.
+  }  ///.length devuelve la longitud de la cadena. => estas son restadas al ancho de 15
+
+  cout << "|                    |" << endl;
+  cout << "+--------------------+" << endl;
 }
 
 void mezclarMazo(Carta vArr[])
@@ -64,9 +102,7 @@ void mezclarMazo(Carta vArr[])
   setlocale(LC_ALL, "Spanish");
 
   cout << "Mezclando mazo, presione una tecla para continuar...." << endl;
-  //cin.ignore();// Limpiar el buffer de entrada de cualquier caracter pendiente, incluyendo el caracter de nueva linea
-  //getchar(); // Espera a que se presione una tecla
-   rlutil::anykey();
+  rlutil::anykey();
 
   int aleatorio1, aleatorio2;
   Carta aux;
@@ -107,34 +143,6 @@ void repartirCartas(Jugador &j1, Jugador &j2, Carta arr[])
   }
 }
 
-void mostrarMazoEnMesa(Carta vMazo[])
-{
-  cout << "+--------------------+" << endl;
-  cout << "|                    |" << endl;
-
-  for (int x = 0; x < MAZO; x++)
-  {
-    if (vMazo[x].enMazo == true)
-    {
-      cout << "|     ";
-      if(vMazo[x].palo == "Corazon" || vMazo[x].palo == "Diamante" )
-      {
-        rlutil::setColor(rlutil::RED);
-        cout<< vMazo[x].valor << " " << vMazo[x].palo;
-        rlutil::setColor(rlutil::BLACK);
-      }
-      else
-      {
-        cout<< vMazo[x].valor << " " << vMazo[x].palo;
-      }
-      cout << setw(15 - vMazo[x].valor.length() - vMazo[x].palo.length()) << "|" << endl;
-    } ///15 es el ancho total deseado.
-  }  ///.length devuelve la longitud de la cadena. => estas son restadas al ancho de 15
-
-  cout << "|                    |" << endl;
-  cout << "+--------------------+" << endl;
-}
-
 void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2)
 {
   //mostrar con cout que le queda a cada jugador
@@ -151,7 +159,7 @@ void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2)
   for(int x=0; x<CARTAS_CORRAL; x++)
   {
     cout << "|     ";
-    if (j1.corral[x].bloqueada)
+    if (j1.corral[x].bloqueada) //si esta bloqueada le pone "*", de lo contrario es todo igual pero sin el "*"
     {
       if(j1.corral[x].palo == "Diamante" || j1.corral[x].palo == "Corazon")
       {
@@ -167,7 +175,6 @@ void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2)
         cout << j1.corral[x].palo << " " << j1.corral[x].valor << setw(13 - j1.corral[x].valor.length() - j1.corral[x].palo.length());
         cout << "|";
       }
-
     }
     else
     {
@@ -239,8 +246,6 @@ void mostrarCartasDeJugadores(Jugador &j1, Jugador &j2)
   cout << "+--------------------+" << endl;
 }
 
-
-
 void mostrarRonda(Jugador jA, Jugador jB, int &contRonda, int &turno)
 {
   cout << "CLUTCH" << endl;
@@ -263,18 +268,15 @@ void validarIngreso(int &posicionCorral){
   }
 }
 
-
-
 bool juegoFinalizado(Jugador &j) {
 
   for (int i = 0; i < CARTAS_CORRAL; i++) {
     if(j.corral[i].valor != VALORES[i]){
-    return false;
+      return false;
     }
   }
   return true;
 }
-
 
 Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// el returne viene de clutchStarter
 {
@@ -284,7 +286,7 @@ Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// e
     Jugador jugadorB;
     Jugador ganador;
 
-    int dado = 6, turno = 1, contRonda = 1, ultimaJugada = -1;
+    int dado, turno = 1, contRonda = 1, ultimaJugada = -1;
 
     if(returne == 1)
     {
@@ -313,11 +315,11 @@ Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// e
         rlutil::setColor(rlutil::BLUE);
         cout << "TURNO DE " << jugadorB.nombre << endl;
         rlutil::setColor(rlutil::BLACK);
-        contRonda ++;
+        contRonda ++;///siempre que turno sea par me aumenta uno la ronda
       }
 
       cout << "Pulse Enter para lanzar el dado! "<< endl;
-      //dado = lanzarDado();
+      dado = lanzarDado();
       getchar();// Espera a que se presione una tecla
 
       cout << "LANZAMIENTO DADO #" << dado << endl;
@@ -365,7 +367,7 @@ Jugador juegoInsitu(Jugador &j1, Jugador &j2, int returne, Carta vMazo[])  /// e
     rlutil::setColor(rlutil::BLACK);
     mostrarCartasDeJugadores(jugadorA, jugadorB);
 
-    cout << "PARAPAPA PA PA PAPA! HAY UN GANADORRR, ESTE ES: " ; // Esto tambien podriamos colorearlo.
+    cout << "PARAPAPA PA PA PAPA! HAY UN GANADORRR, ESTE ES: " ;
     if(juegoFinalizado(jugadorA))
     {
       rlutil::setBackgroundColor(rlutil::GREEN);

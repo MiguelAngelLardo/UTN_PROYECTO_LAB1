@@ -35,18 +35,17 @@ void mostrarCreditos(int &opcion, Jugador &j1, Jugador &j2)
 
   while (y >= pantallaAltura / 2) // Acá lo mismo, dividimos por dos para ubicar el centro.
   {
-
     // En la "x" y en la "y", tenemos como el eje, entonces, le vamos restando o sumando para ir ubicando cada dos espacios.
     rlutil::cls();
-    rlutil::locate(x, y-6 );
+    rlutil::locate(x, y-6);
     cout << creditos << endl;
-    rlutil::locate(x, y -4);
+    rlutil::locate(x, y-4);
     cout << alumnos << endl;
-    rlutil::locate(x - 12, y -2);
+    rlutil::locate(x-12, y-2);
     cout << miguel << endl;
-    rlutil::locate(x - 16, y );
+    rlutil::locate(x-16, y);
     cout << adriel;
-    rlutil::locate(x - 24, y + 2);
+    rlutil::locate(x-24, y+2);
     cout << equipo;
 
     rlutil::msleep(50); // Esta funcion, espera en milisegundos para ejecutar. A mayor número mas tarda.

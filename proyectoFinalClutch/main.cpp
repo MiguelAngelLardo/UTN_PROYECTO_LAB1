@@ -27,27 +27,3 @@ int main()
 
   return 0;
 }
-
-/*
-
-#include <iostream>
-#include <fcntl.h>
-#include <stdio.h>
-
-
-
-using namespace std;
-
-int main()
-{
-    _setmode(_fileno(stdout), _O_U16TEXT);
-    wcout << L"testing foreign character: \x2660" << endl;
-    wcout << L"testing foreign character: \x2663" << endl;
-    wcout << L"testing foreign character: \x2665" << endl;
-    wcout << L"testing foreign character: \x2666" << endl;
-
-    system("pause");
-
-    return 0;
-}
-*/

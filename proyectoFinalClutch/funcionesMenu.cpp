@@ -43,30 +43,39 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador &ganadorMaximo,
 
   switch (opcion)
   {
-    case 1: //Jugar
-    {
-      rlutil::cls(); //Borra lo que estaba antes al elegir una opcion
-      nombresJugadores(j1, j2);// INGRESO NOMBRES
-      rlutil::cls();
+  case 1: //Jugar
+  {
+    rlutil::cls(); //Borra lo que estaba antes al elegir una opcion
+    nombresJugadores(j1, j2);// INGRESO NOMBRES
+    rlutil::cls();
 
-      cout << "ENHORABUENA COMENZAMOS EL JUEGO!!!" << endl;
-      cout << "ESTAS SON LAS CARTAS INICIALES" << endl;
+    cout << "ENHORABUENA COMENZAMOS EL JUEGO!!!" << endl;
+    cout << "ESTAS SON LAS CARTAS INICIALES" << endl;
 
-      Carta vMazo[MAZO];//Declaro el mazo
-      resetearMazo(vMazo);//resetea y pone default -> ordena el mazo
-      mostrarMazoEnMesa(vMazo);//Mostramos el mazo ordenado
+    Carta vMazo[MAZO];//Declaro el mazo
+    resetearMazo(vMazo);//resetea y pone default -> ordena el mazo
+    mostrarMazoEnMesa(vMazo);//Mostramos el mazo ordenado
 
-      mezclarMazo(vMazo); //esto mezcla el mazo completo
-      cout << "Las cartas de cada jugador son: " << endl;
-      repartirCartas(j1, j2, vMazo);
-      mostrarCartasDeJugadores(j1,j2);
+    mezclarMazo(vMazo); //esto mezcla el mazo completo
+    cout << "Las cartas de cada jugador son: " << endl;
+    repartirCartas(j1, j2, vMazo);
+    mostrarCartasDeJugadores(j1,j2);
 
-     j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "Q", j1.corral[3].valor = "A", j1.corral[4].valor = "K";
-     j2.corral[0].valor = "10", j2.corral[1].valor = "J", j2.corral[2].valor = "Q", j2.corral[3].valor = "A", j2.corral[4].valor = "A";
+    ///HARDCODEO para entrar a straighHand
+    //j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "Q", j1.corral[3].valor = "K", j1.corral[4].valor = "A";
 
 
-    //Valida que no haya escalera
-    while(straightHand(j1, j2)){
+    ///HARDCODEO para empate
+    //j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "Q", j1.corral[3].valor = "A", j1.corral[4].valor = "K";
+    //j2.corral[0].valor = "10", j2.corral[1].valor = "J", j2.corral[2].valor = "Q", j2.corral[3].valor = "A", j2.corral[4].valor = "K";
+
+    ///HARDCODEO para pruebas
+    //j1.corral[0].valor = "10", j1.corral[1].valor = "J", j1.corral[2].valor = "Q", j1.corral[3].valor = "A", j1.corral[4].valor = "K";
+    //j2.corral[0].valor = "10", j2.corral[1].valor = "J", j2.corral[2].valor = "Q", j2.corral[3].valor = "A", j2.corral[4].valor = "A";
+
+
+
+    while(straightHand(j1, j2)){//Valida que no haya escalera
       cin.ignore(); // Limpiar el buffer de entrada de cualquier caracter pendiente, incluyendo el caracter de nueva lïnea
       cout << "OPS SALIO ESCALERA! VOLVEREMOS A REPARTIR...";
       cout << "Mezclando mazo, presione enter para continuar....";
@@ -80,15 +89,14 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador &ganadorMaximo,
     }
 
     rlutil::setColor(rlutil::RED);
-    cout << "DETERMINEMOS QUIEN COMIENZA EL JUEGO" << endl;
+    cout << endl << "DETERMINEMOS QUIEN COMIENZA EL JUEGO" << endl;
     cout << "Veremos quien tiene mas A, caso de empate seguiremos comparando con los siguientes valores (K, Q, J, 10)" << endl;
     rlutil::setColor(rlutil::BLACK);
 
-    //Valida quien inicia el juego y que no haya empate en el inicio
-    int starter = clutchStarter(j1, j2);
+    int starter = clutchStarter(j1, j2);//Valida quien inicia el juego y que no haya empate en el inicio
     while(starter == 0){
       cin.ignore(); // Limpiar el búfer de entrada de cualquier carácter pendiente, incluyendo el carácter de nueva línea
-      cout << "*****OPS SALIO EMPATE...*****" << endl;
+      cout << endl << "*****OPS SALIO EMPATE...*****" << endl;
       cout << "DETERMINEMOS QUIEN COMIENZA EL JUEGO, presione enter para continuar....";
       getchar(); // Espera a que se presione una tecla
       resetearMazo(vMazo);
@@ -113,19 +121,19 @@ void manejarOpcion(int opcion, Jugador &j1, Jugador &j2, Jugador &ganadorMaximo,
     }
     break;
     }
-    case 2: //estadisticas
-    {
-      mostrarHito(ganadorMaximo);
-      break;
-    }
-    case 3: //CREDITOS
-    {
-      mostrarCreditos(opcion,j1,j2);
-      break;
-    }
-    case 0:
-      cout << "SALIENDO DEL JUEGO. GRACIAS POR JUGAR CLUTCH" << endl;
-      break;
+  case 2: //estadisticas
+  {
+    mostrarHito(ganadorMaximo);
+    break;
+  }
+  case 3: //CREDITOS
+  {
+    mostrarCreditos(opcion,j1,j2);
+    break;
+  }
+  case 0:
+    cout << "SALIENDO DEL JUEGO. GRACIAS POR JUGAR CLUTCH" << endl;
+    break;
   }
 }
 

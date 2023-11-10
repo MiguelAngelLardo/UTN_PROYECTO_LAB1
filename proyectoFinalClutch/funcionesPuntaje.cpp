@@ -7,8 +7,6 @@
 
 using namespace std;
 
-
-
 void mostrarPuntajes(Jugador &ganador, Jugador &perdedor, int ultimaJugada)
 {
   setlocale(LC_ALL, "Spanish");
